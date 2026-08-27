@@ -11,13 +11,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from giuliac device
 $(call inherit-product, device/oneplus/giuliac/device.mk)
 
-# Inherit some common ASCP stuff.
-$(call inherit-product, vendor/custom/config/common_full_phone.mk)
+# Inherit some common Voltage stuff.
+$(call inherit-product, vendor/voltage/config/common_full_phone.mk)
 
-# ASCP flags
-ASCP_MAINTAINER := 0mar
-
-PRODUCT_NAME := giuliac
+PRODUCT_NAME := voltage_giuliac
 PRODUCT_DEVICE := giuliac
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus

@@ -284,4 +284,14 @@
          booted.  -->
     <integer name="config_stableDeviceDisplayWidth">1264</integer>
     <integer name="config_stableDeviceDisplayHeight">2780</integer>
+
+    <!-- Paths to the libraries that contain device specific key handlers -->
+    <string-array name="config_deviceKeyHandlerLibs" translatable="false">
+        <item>/system_ext/app/KeyHandler/KeyHandler.apk</item>
+    </string-array>
+
+    <!-- Names of the key handler classes -->
+    <string-array name="config_deviceKeyHandlerClasses" translatable="false">
+        <item>org.lineageos.settings.device.KeyHandler</item>
+    </string-array>
 </resources>
