@@ -19,9 +19,8 @@ from extract_utils.main import (
 
 namespace_imports = [
     'hardware/oplus',
-    'hardware/qcom-caf/sm8650',
     'vendor/oneplus/sm8650-common',
-    'vendor/qcom/opensource/commonsys-intf/display',
+    'vendor/qcom/common/vendor/adreno/u',
 ]
 
 
@@ -37,15 +36,8 @@ lib_fixups: lib_fixups_user_type = {
         'libdualcam_video_optical_zoom',
         'libhwconfigurationutil',
         'libPanelChaplin',
-        'libpwirisfeature',
-        'libpwirishalwrapper',
         'libtriplecam_optical_zoom_control',
         'libtriplecam_video_optical_zoom',
-        'vendor.pixelworks.hardware.display@1.0',
-        'vendor.pixelworks.hardware.display@1.1',
-        'vendor.pixelworks.hardware.display@1.2',
-        'vendor.pixelworks.hardware.feature@1.0',
-        'vendor.pixelworks.hardware.feature@1.1',
     ): lib_fixup_vendor_suffix,
 }
 
@@ -75,19 +67,15 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('remote_handle_open')
         .clear_symbol_version('remote_register_buf_attr')
         .clear_symbol_version('remote_register_buf'),
-    (
-        'odm/lib64/libdisplaycolorfeature.so',
-        'odm/lib64/libdisplayfossfeature_nature.so',
-        'vendor/bin/hw/vendor.qti.hardware.display.composer-service',
-        'vendor/lib64/libdpps.so',
-        'vendor/lib64/libsnapdragoncolor-manager.so',
-    ): blob_fixup()
-        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     'vendor/etc/libnfc-nci.conf': blob_fixup()
         .regex_replace('NFC_DEBUG_ENABLED=1', 'NFC_DEBUG_ENABLED=0'),
     'vendor/etc/libnfc-nxp.conf': blob_fixup()
         .regex_replace('(NXPLOG_.*_LOGLEVEL)=0x03', '\\1=0x02')
         .regex_replace('NFC_DEBUG_ENABLED=1', 'NFC_DEBUG_ENABLED=0'),
+    'vendor/etc/init/vendor.qti.camera.provider-service_64.rc': blob_fixup()
+        .regex_replace(
+        r'(service vendor\.camera-provider .*?\n)',
+        r'\1    setenv JE_MALLOC_ZERO_FILLING 1\n'),
     'vendor/lib64/libcwb_qcom_aidl.so': blob_fixup()
         .add_needed('libui_shim.so'),
 }  # fmt: skip

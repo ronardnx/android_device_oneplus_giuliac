@@ -7,5 +7,5 @@
           package="org.lineageos.settings.device.overlay">
     <overlay android:targetPackage="org.lineageos.settings.device"
              android:isStatic="true"
-             android:priority="300" />
+             android:priority="900" />
 </manifest>
