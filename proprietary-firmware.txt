@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from OnePlus Ace 5 (PKG110_16.0.9.400(CN01)).
+## are from OnePlus Ace 5 (PKG110_16.0.10.500(CN01)).
 
 abl.img;AB
 aop.img;AB
