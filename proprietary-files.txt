@@ -1745,3 +1745,9 @@ odm/etc/wifi/kiwi/bdwlan.b0c
 odm/etc/wifi/kiwi/bdwlan.elf
 odm/etc/wifi/kiwi/regdb.bin
 odm/vendor/etc/wifi/WCNSS_qcom_cfg.ini
+
+# OPLUS Camera
+odm/lib64/libui.so:vendor/lib64/libui-stock.so;FIX_SONAME
+odm/etc/camera/license_release_fdc.lic
+odm/etc/camera/singleblur/license_release.license
+odm/etc/camera/model/license.lic

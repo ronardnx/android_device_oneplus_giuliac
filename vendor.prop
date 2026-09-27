@@ -9,3 +9,7 @@ ro.surface_flinger.set_touch_timer_ms=200
 
 # USB
 vendor.usb.product_string=OnePlus Ace 5
+
+# OPlus Camera
+ro.vendor.oplus.market.enname=OnePlus Ace 5
+ro.vendor.oplus.market.name=OnePlus Ace 5

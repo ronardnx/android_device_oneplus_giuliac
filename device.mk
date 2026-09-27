@@ -41,6 +41,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.haptics.rc
 
+# OPlus Camera
+$(call inherit-product-if-exists, vendor/oplus/camera/giuliac/opluscamera.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-aospa
